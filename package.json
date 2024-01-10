@@ -1,0 +1,23 @@
+{
+  "name": "react_course",
+  "version": "1.0.0",
+  "description": "This is React course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nikhil1604-up/React_Course.git"
+  },
+  "keywords": [],
+  "author": "Nikhil Upadhyay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nikhil1604-up/React_Course/issues"
+  },
+  "homepage": "https://github.com/Nikhil1604-up/React_Course#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
