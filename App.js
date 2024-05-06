@@ -10,6 +10,8 @@ import ReactDOM from "react-dom/client";
  *   -Search
  *   -RestaurantContainer
  *      -RestaurantCard
+ *        -Image
+ *        -Name of Res,Rating,cusinies
  *
  * Footer
  *   -Copyright
@@ -38,10 +40,40 @@ const Header = () => {
     </div>
   );
 };
+
+const RestaurantCard = () =>{
+  return (
+    <div className="res-card">
+      <img className="res-logo" alt="BBQ" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ru7j7x8qqtvuzfuw7cdh" />
+      <h3>BBQ</h3>
+      <h4>Biryani,North Indian</h4>
+      <h4>4.5 stars</h4>
+      <h4>38 mins</h4>
+  </div>
+  )
+  
+}     
+
+const Body = () =>{
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+      </div>
+    </div>
+  )
+}
+
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
+      <Body/>
     </div>
   );
 };
@@ -49,3 +81,4 @@ const AppLayout = () => {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<AppLayout />);
+ 
