@@ -33,3 +33,7 @@
   \*/
 
 # default vs named export/import --> In a single file i can have only one default export.i.e. (export default YourComponent at end of the function) ,so named export is used here to export multiple function from one file.i.e (export const YourComponent = () => {}).Difference in importi g them default import --> import YourComponet from './YourComponent' && named import --> import {YourComponent} from './YourComponent'.
+
+# React is fast of its ability to do DOM manipulations quickly(concept of virtual DOM).
+
+# React and other JS libraries like angular are solving one issue which is keeping the UI and data layer in sync with each other.

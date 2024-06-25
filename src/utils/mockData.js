@@ -11,7 +11,7 @@ export const resObj = [
           "cuisines": [
             "Pizzas",
           ],
-          "avgRaiting":"4.2",
+          "avgRaiting":"3.9",
           "delTime":"34",
           "imageData":'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ru7j7x8qqtvuzfuw7cdh'
         }
@@ -30,7 +30,7 @@ export const resObj = [
             "Burgers",
             "Fast Food"
           ],
-          "avgRaiting":"4.5",
+          "avgRaiting":"3.4",
           "delTime":"25",
           "imageData":'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/63178e3e64d503a479f2a2048a474552'
         }
