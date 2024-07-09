@@ -37,3 +37,17 @@
 # React is fast of its ability to do DOM manipulations quickly(concept of virtual DOM).
 
 # React and other JS libraries like angular are solving one issue which is keeping the UI and data layer in sync with each other.
+
+# React Hooks (useState,useEffect etc) --> A react hook is just a normal JS function which is given to us by react it is prebuilt, thr only thing is that it is a utility function.
+
+# useState --> Super powerful react variables , 
+  ## why it is called a state variable because it maintains state of our component.
+  ## Its scope is inside the component in which it is used.
+
+# Whenever a  state variable changes/updates react will rerender the components.
+
+# Reconciliation algorithm (react fiber) --> Read it online. 
+
+# Virtual DOM --> It is a object reprenstation of an actual DOM,it is nothing but a normal JS object. 
+
+# Diffing algorithm --> It basically tries out to find the difference between the old virtual DOM and new virtual DOM. It will calculate the difference and actually update the DOM on every render cycle.
