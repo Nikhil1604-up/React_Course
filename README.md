@@ -51,3 +51,22 @@
 # Virtual DOM --> It is a object reprenstation of an actual DOM,it is nothing but a normal JS object. 
 
 # Diffing algorithm --> It basically tries out to find the difference between the old virtual DOM and new virtual DOM. It will calculate the difference and actually update the DOM on every render cycle.
+
+## EP 6 --> Exploring thw world
+
+# Monolith architecture --> All the BE,FE,Authrization,Database etc all services are written together for a project.
+
+# Microservice architecture --> Here we have different service for different job and all these micro services talk to each other depending upon the use cases ,for each and every small thing we have a different project and this is known as seperationof concerns and follows single responsiblity principle where each and every services has it's own job.
+
+# API calls  --> two ways to call 
+  1.Page loads --> (wait for 500ms) API call success --> render the data on UI.
+  2.Page loads --> Render the UI --> API call success --> re render data on UI.
+  will be following the second approach
+
+# useEffetc(()=>{
+    console.log('useEffect called here')
+  },[])
+  ## The above empty dependency useEffect will be called as soon as the UI is rendered on the page.
+
+# Now to detch data from the API we will be using fetch() 
+  NOTE--> fetch() is given by the browsers and not by javascript.
