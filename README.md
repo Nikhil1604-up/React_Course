@@ -75,4 +75,4 @@
 
 # So we have used the state variable and when the state is updated not only the login button updates but our whole header component updates. 
 
-
+# Whenever state variables update,react triggers a reconciliation cycle(re renders the component).
