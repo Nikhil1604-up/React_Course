@@ -68,5 +68,11 @@
   },[])
   ## The above empty dependency useEffect will be called as soon as the UI is rendered on the page.
 
-# Now to detch data from the API we will be using fetch() 
+# Now to fetch data from the API we will be using fetch() 
   NOTE--> fetch() is given by the browsers and not by javascript.
+
+# Suppose we have a let variable named btnName which is initially assigned to a value 'login' and i have a click handler on a button which updates the btnName to logout when i click it athough btnName is changing/updating to logout but our button is still showing 'login' why?? --> because the page has not rendered again /updated again when the btnName changes so therfore so change from login to logout on UI we need to use state.
+
+# So we have used the state variable and when the state is updated not only the login button updates but our whole header component updates. 
+
+
