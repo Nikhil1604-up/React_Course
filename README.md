@@ -76,3 +76,20 @@
 # So we have used the state variable and when the state is updated not only the login button updates but our whole header component updates. 
 
 # Whenever state variables update,react triggers a reconciliation cycle(re renders the component).
+
+## EP 7 --> Finding the path.
+
+# useEffect ,(dependency)
+  ## 1.useEffect with no dependency --> it will be called every time when the page is rendered.
+  ## 2.useEffect with [] dependency --> will get called only on initial render.
+  ## 3. useEffect with [dependency] --> will get called always when the dependency changes.
+
+  ## Note --> On initial render regardless of dependency useEffect gets called.
+
+# React Router
+
+ # createBrowserRouter --> It will create a routing configuration for us.Basically it takes array of objects.[{path:'urlPath',element:'elementToRender'}] 
+
+ # RouterProvider --> Basically when we render our root component to the DOM,we provider this RouterProvider component there at root.render().
+
+ # useRouteError --> useRouteError is a hook given by react router dom which give us more detail about the route .
