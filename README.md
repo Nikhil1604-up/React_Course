@@ -40,15 +40,17 @@
 
 # React Hooks (useState,useEffect etc) --> A react hook is just a normal JS function which is given to us by react it is prebuilt, thr only thing is that it is a utility function.
 
-# useState --> Super powerful react variables , 
-  ## why it is called a state variable because it maintains state of our component.
-  ## Its scope is inside the component in which it is used.
+# useState --> Super powerful react variables ,
 
-# Whenever a  state variable changes/updates react will rerender the components.
+## why it is called a state variable because it maintains state of our component.
 
-# Reconciliation algorithm (react fiber) --> Read it online. 
+## Its scope is inside the component in which it is used.
 
-# Virtual DOM --> It is a object reprenstation of an actual DOM,it is nothing but a normal JS object. 
+# Whenever a state variable changes/updates react will rerender the components.
+
+# Reconciliation algorithm (react fiber) --> Read it online.
+
+# Virtual DOM --> It is a object reprenstation of an actual DOM,it is nothing but a normal JS object.
 
 # Diffing algorithm --> It basically tries out to find the difference between the old virtual DOM and new virtual DOM. It will calculate the difference and actually update the DOM on every render cycle.
 
@@ -58,38 +60,57 @@
 
 # Microservice architecture --> Here we have different service for different job and all these micro services talk to each other depending upon the use cases ,for each and every small thing we have a different project and this is known as seperationof concerns and follows single responsiblity principle where each and every services has it's own job.
 
-# API calls  --> two ways to call 
-  1.Page loads --> (wait for 500ms) API call success --> render the data on UI.
-  2.Page loads --> Render the UI --> API call success --> re render data on UI.
-  will be following the second approach
+# API calls --> two ways to call
+
+1.Page loads --> (wait for 500ms) API call success --> render the data on UI.
+2.Page loads --> Render the UI --> API call success --> re render data on UI.
+will be following the second approach
 
 # useEffetc(()=>{
-    console.log('useEffect called here')
-  },[])
-  ## The above empty dependency useEffect will be called as soon as the UI is rendered on the page.
 
-# Now to fetch data from the API we will be using fetch() 
-  NOTE--> fetch() is given by the browsers and not by javascript.
+    console.log('useEffect called here')
+
+},[])
+
+## The above empty dependency useEffect will be called as soon as the UI is rendered on the page.
+
+# Now to fetch data from the API we will be using fetch()
+
+NOTE--> fetch() is given by the browsers and not by javascript.
 
 # Suppose we have a let variable named btnName which is initially assigned to a value 'login' and i have a click handler on a button which updates the btnName to logout when i click it athough btnName is changing/updating to logout but our button is still showing 'login' why?? --> because the page has not rendered again /updated again when the btnName changes so therfore so change from login to logout on UI we need to use state.
 
-# So we have used the state variable and when the state is updated not only the login button updates but our whole header component updates. 
+# So we have used the state variable and when the state is updated not only the login button updates but our whole header component updates.
 
 # Whenever state variables update,react triggers a reconciliation cycle(re renders the component).
 
 ## EP 7 --> Finding the path.
 
 # useEffect ,(dependency)
-  ## 1.useEffect with no dependency --> it will be called every time when the page is rendered.
-  ## 2.useEffect with [] dependency --> will get called only on initial render.
-  ## 3. useEffect with [dependency] --> will get called always when the dependency changes.
 
-  ## Note --> On initial render regardless of dependency useEffect gets called.
+## 1.useEffect with no dependency --> it will be called every time when the page is rendered.
+
+## 2.useEffect with [] dependency --> will get called only on initial render.
+
+## 3. useEffect with [dependency] --> will get called always when the dependency changes.
+
+## Note --> On initial render regardless of dependency useEffect gets called.
 
 # React Router
 
- # createBrowserRouter --> It will create a routing configuration for us.Basically it takes array of objects.[{path:'urlPath',element:'elementToRender'}] 
+# createBrowserRouter --> It will create a routing configuration for us.Basically it takes array of objects.[{path:'urlPath',element:'elementToRender'}]
 
- # RouterProvider --> Basically when we render our root component to the DOM,we provider this RouterProvider component there at root.render().
+# RouterProvider --> Basically when we render our root component to the DOM,we provider this RouterProvider component there at root.render().
 
- # useRouteError --> useRouteError is a hook given by react router dom which give us more detail about the route .
+# useRouteError --> useRouteError is a hook given by react router dom which give us more detail about the route.
+
+# Outlet --> React router dom gives us a dynamic component wihich will get replaced depending upon the path.
+
+# Navigating to some other route(Link) --> You can say it is very easy just use the anchor tag ,but when we use the anchor tag our whole page gets refreshed which we do not want ,in react we can navigate to some other routes without refreshing the page we can use Link component provided by react router dom.
+
+# Single Page Application(SPA) --> In react we just have a single page application which means that when the routing is changed only the required component is rendered and getting interchanged,whole page is not loaded again and again.
+
+## Two types of routing
+
+- Client Side Routing --> Here we are using client side routing we have the component inside our UI and when we navigate without making any network call the component is loaded.
+- Server Side Routing --> Here when we use to naviagate to different routes network call is being made and data is fetched from server and then data is rendered on to the UI(used in past).
