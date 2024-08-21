@@ -4,15 +4,16 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   //local state variable -- super powerful variable.(we will use a hook useState)
   const [restaurantList, setRestaurantList] = useState([]);
-  const [filteredRestaurant,setFilteredRestaurant] = useState([]);
-  const [searchText,setSearchText] = useState('');
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const [searchText, setSearchText] = useState("");
   //useEffect hook
 
-  const searchHandler = () =>{
-    console.log(searchText)
-    const searchedList = restaurantList?.filter((res)=> res?.info?.name?.toLowerCase().includes(searchText?.toLowerCase())) 
+  const searchHandler = () => {
+    const searchedList = restaurantList?.filter((res) =>
+      res?.info?.name?.toLowerCase().includes(searchText?.toLowerCase())
+    );
     setFilteredRestaurant(searchedList);
-  }
+  };
 
   const fetchData = async () => {
     const data = await fetch(
@@ -23,14 +24,15 @@ const Body = () => {
       jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
-    setFilteredRestaurant( jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-      ?.restaurants)
+    setFilteredRestaurant(
+      jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
   };
 
   useEffect(() => {
     fetchData();
   }, []);
-
 
   return restaurantList?.length === 0 ? (
     <Shimmer />
@@ -38,8 +40,13 @@ const Body = () => {
     <div className="body">
       <div className="filter">
         <div className="search">
-          <input type='text' className="search-box" value={searchText} onChange={(e)=>setSearchText(e?.target?.value)}/>
-          <button onClick={()=> searchHandler()}>Search</button>
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => setSearchText(e?.target?.value)}
+          />
+          <button onClick={() => searchHandler()}>Search</button>
         </div>
         <button
           className="filter-btn"
