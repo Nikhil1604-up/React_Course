@@ -114,3 +114,14 @@ NOTE--> fetch() is given by the browsers and not by javascript.
 
 - Client Side Routing --> Here we are using client side routing we have the component inside our UI and when we navigate without making any network call the component is loaded.
 - Server Side Routing --> Here when we use to naviagate to different routes network call is being made and data is fetched from server and then data is rendered on to the UI(used in past).
+
+# EP-8 (Lets get classy)
+
+## Class based components --> It is basically a class which extends React.Component and has a render method inside it which returns some JSX.
+
+## Receiving props inside class based component --> We need to use a constructor and inside the constructor need to use super keyword,then we can access the props using this keyword like this.props.name
+
+- constructor(props){
+  super(props)
+  }
+- Then use the props --> {this.props.name}
