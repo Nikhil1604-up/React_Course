@@ -125,3 +125,22 @@ NOTE--> fetch() is given by the browsers and not by javascript.
   super(props)
   }
 - Then use the props --> {this.props.name}
+
+- For using state --> constructor(props){
+  super(props)
+  this.state={
+  count:0,
+  }
+  }
+
+## In functional component we generally use different state variable for different purpose but at the end react converts all the state variables into a single object.
+
+## React component Lifecycle --> 1.Loading/Mounting/Render on web page are one and the same thing.
+
+# 2. Whenever a class based componet loads or new instance of class is created/instantiated then firstly the constructor is called and then the render method is called. (Constructor called > Render method called)
+
+# Note -> class About extends React.Component , instead of this we can write like this also class About extends Component. and use import like this import {Component} from 'react'.
+
+# 3. ComponentDidMount() --> Class based component also has some more important methods ,lets first explore componentDidMount(). (Constructor --> render method --> componentDidMount()), firstly constructor is called then the render method is called and once this component is mount on the DOM then componentDidMount() is called.
+
+# Note --> Parent class based component and it has a child class based component and both has componentDidMount so what will be the order of calling the method. --> (Parent constructor > Parent render > Child constructor > Child render > Child componentDidMount() > Parent componentDidMount()).
