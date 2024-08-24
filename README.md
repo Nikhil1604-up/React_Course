@@ -144,3 +144,50 @@ NOTE--> fetch() is given by the browsers and not by javascript.
 # 3. ComponentDidMount() --> Class based component also has some more important methods ,lets first explore componentDidMount(). (Constructor --> render method --> componentDidMount()), firstly constructor is called then the render method is called and once this component is mount on the DOM then componentDidMount() is called.
 
 # Note --> Parent class based component and it has a child class based component and both has componentDidMount so what will be the order of calling the method. --> (Parent constructor > Parent render > Child constructor > Child render > Child componentDidMount() > Parent componentDidMount()).
+
+# Note --> Why API call is made in componentDidMount() ,because react wants to render the component as quickly as possible we do not want to wait for the API call to complete and then render the component ,we want the component to render quickly then make an API call fill the data of the API call,i.e.,rerender the component.
+
+# 4. Parent with multiple child lifecycle method -->
+
+-Parent constructor  
+-Parent render
+
+-Child 1 constructor
+-Child 1 render
+-Child 1 componentDidMount
+
+-Child 2 constructor
+-Child 2 render
+-Child 2 componentDidMount
+
+-Parent componentDidMount
+
+# Above lifecycle is not correct,but why?
+
+## React is mounted/loaded on web page in two phases
+
+    1. Render Phase (constructor > render) --> Pure has no side effects.
+    2. Commit Phase (React updates DOM and refs > componentDidMount) --> Can work with DOM,run side effects.
+    So in render phase constructor and then render is called and component is loaded on to the DOM ,then in commit phase side effects/componentDidMount is called.
+
+# Correct order
+
+-Parent constructor  
+-Parent render
+
+-Child 1 constructor
+-Child 1 render
+
+-Child 2 constructor
+-Child 2 render
+
+-Child 1 componentDidMount
+-Child 2 componentDidMount
+
+-Parent componentDidMount
+
+# Note --> For every parent,every child component in react goes through this lifecycle.
+
+# So we got the answer this lifecycle order is due to react render and commit phase,but why react is doing that?
+
+- So in commit phase the DOM manipulation takes place ,and that is an expensive process which takes time so react tries to batch all the component in commit phase to optimise the mounting/loading of component on the web page.

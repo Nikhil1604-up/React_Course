@@ -6,15 +6,16 @@ const About = () => {
     <div>
       <h1>About </h1>
       <h2>This is food ordering app.</h2>
-      <User
-        name="Nikhil Upadhyay (functional)"
-        location="New Delhi (functional)"
-        contact="nikhilupadhyay1604@gmail.com(functional)"
-      />
+
       <UserClass
         name="Nikhil Upadhyay (class)"
         location="New Delhi (class)"
         contact="nikhilupadhyay1604@gmail.com(class)"
+      />
+      <UserClass
+        name="Demo Name(class)"
+        location="LA (class)"
+        contact="demoName@gmail.com(class)"
       />
     </div>
   );
