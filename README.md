@@ -199,3 +199,21 @@ NOTE--> fetch() is given by the browsers and not by javascript.
 ## UPDATING Lifecycle Phase (render > componentDidUpdate( ))
 
 - So when we have called componentDidMount() the mounting phase is done and here we have updated the state (this.setState()) ,so if state is updated now updating phase of lifecycle starts and render() is again called once again and the DOM is updated with new state data and after this componentDidUpdate() is called and Updating phase gets finished.
+
+## UNMOUNTING (componentWillUnMount())
+
+- Removing a component from the DOM is called unmounting the component.
+
+- Taking example of the about page ,firstly mounting happens render > componentDidMount() > then updating (componentDidUpdate()) then the process of unmounting starts if we have clicked on lets say on the contact page now the component is removed from the DOM ,so then componentWillMount() will be called.
+
+- ComponentWillUnMount() - As react is a single page application just the content on the web page changes so when we are naviagting to some other component we need to clear things up of the previous component.
+
+- Lets understand componetWillMount() with an example ,suppose we have a setInterval written inside the compoenentDidMount() of 1 sec so when i am on the about page this interval will run after every sec,but when i navigate to some other component then also this setInterval will be runing in the background and if you visit again the about page there will be two now intervals so we will use clearInterval inside componentWillMount() in the about page ,this will clear the interval when we leave the about page.
+
+# Note - useEffect cleanup function(return fuction inside useEffect is used to cleanUp).
+
+- useEffect(()=>{
+  # code
+  return () =>{ this will be called after we leave/unmount the component.
+  }
+  },[])
