@@ -4,34 +4,40 @@ class UserClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
-      count2: 1,
+      userInfo: {
+        name: "",
+        location: "",
+        avatar_url: "",
+      },
     };
   }
 
-  componentDidMount() {}
+  async componentDidMount() {
+    const data = await fetch("https://api.github.com/users/Nikhil1604-up");
+    const userData = await data.json();
+    console.log(userData);
+    this.setState({
+      userInfo: userData,
+    });
+  }
 
   render() {
-    const { name, location, contact } = this.props;
-    const { count, count2 } = this.state;
+    const { name, location, avatar_url } = this.state.userInfo;
 
-    const incrementHandler = () => {
-      // this.state.count = this.state.count + 1;
-      // NEVER UPDATE STATE VARIBALE DIRECTLY
+    // this.state.count = this.state.count + 1;
+    // NEVER UPDATE STATE VARIBALE DIRECTLY
 
-      this.setState({
-        count: this.state.count + 1,
-      });
+    // this.setState({
+    //   count: this.state.count + 1,
+    // });
 
-      // Here we have updated count ,so there will be no effect on count2 in the state only count is changed and count2 remain what it was in the initial state.
-    };
+    // Here we have updated count ,so there will be no effect on count2 in the state only count is changed and count2 remain what it was in the initial state.
+
     return (
       <div className="user-card">
-        <h1>Count : {count}</h1>
-        <button onClick={() => incrementHandler()}>Count Increase</button>
+        <img src={avatar_url} />
         <h2>Name: {name}</h2>
         <h3>Location: {location}</h3>
-        <h4>Contact: {contact}</h4>
       </div>
     );
   }
