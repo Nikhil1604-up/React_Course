@@ -8,6 +8,7 @@ const User = (props) => {
   useEffect(() => {
     //API calls
   }, []);
+
   return (
     <div className="user-card">
       <h1>Count: {count}</h1>

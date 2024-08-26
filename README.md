@@ -191,3 +191,11 @@ NOTE--> fetch() is given by the browsers and not by javascript.
 # So we got the answer this lifecycle order is due to react render and commit phase,but why react is doing that?
 
 - So in commit phase the DOM manipulation takes place ,and that is an expensive process which takes time so react tries to batch all the component in commit phase to optimise the mounting/loading of component on the web page.
+
+## Making an API call inside componentDidMount.
+
+- We will make the componentDidMount function as async and inside that we will make an API call.
+
+## UPDATING Lifecycle Phase (render > componentDidUpdate( ))
+
+- So when we have called componentDidMount() the mounting phase is done and here we have updated the state (this.setState()) ,so if state is updated now updating phase of lifecycle starts and render() is again called once again and the DOM is updated with new state data and after this componentDidUpdate() is called and Updating phase gets finished.

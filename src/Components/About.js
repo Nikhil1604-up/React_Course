@@ -1,5 +1,4 @@
 import React from "react";
-import User from "./User";
 import UserClass from "./UserClass";
 const About = () => {
   return (
@@ -11,11 +10,6 @@ const About = () => {
         name="Nikhil Upadhyay (class)"
         location="New Delhi (class)"
         contact="nikhilupadhyay1604@gmail.com(class)"
-      />
-      <UserClass
-        name="Demo Name(class)"
-        location="LA (class)"
-        contact="demoName@gmail.com(class)"
       />
     </div>
   );
