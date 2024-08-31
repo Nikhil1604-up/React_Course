@@ -217,3 +217,13 @@ NOTE--> fetch() is given by the browsers and not by javascript.
   return () =>{ this will be called after we leave/unmount the component.
   }
   },[])
+
+## EP-09 (Optimizing our app)
+
+# Single Rsponsibility Principle --> Each component should have one clear responsibility or role. In other words, a React component should do one thing and do it well.
+
+# Custom Hooks --> These are nothing but our own custom resuable function, when we have component logic that needs to be used by multiple components, we can extract that logic to a custom Hook.
+
+# How to write custom hooks -->
+
+1. Finalise the contract (what is the input of that hook,the output of that hook)
