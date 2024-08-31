@@ -217,3 +217,31 @@ NOTE--> fetch() is given by the browsers and not by javascript.
   return () =>{ this will be called after we leave/unmount the component.
   }
   },[])
+
+## EP-09 (Optimizing our app)
+
+# Single Rsponsibility Principle --> Each component should have one clear responsibility or role. In other words, a React component should do one thing and do it well.
+
+# Custom Hooks --> These are nothing but our own custom resuable function, when we have component logic that needs to be used by multiple components, we can extract that logic to a custom Hook.
+
+# How to write custom hooks -->
+
+1. Finalise the contract (what is the input of that hook,the output of that hook).
+2. Try to name the hook starting with use.
+
+# Chunking / Code splitting / Dynamic Bundling / Lazy loading(on demand loading) / dynamic import --> -
+
+Code splitting is one of the most compelling features of webpack. This feature allows you to split your code into various bundles which can then be loaded on demand or in parallel.
+
+-Suppose if we have not implemented code splitting that one js bundle will load on the browser and it will take some time to load we can reduce the time but doing code splitting we can create multiple bundles so that when when browser load the js file it only loads the required js file which is needed , thus reducing the load time.
+
+# lazy() --> It is a function which is given to us by react ,used for lazy / on demand loading. The lazy function accepts a callback function as an argument. () => import('/filepath) ,this import function is not similar to the import we generally use ,it takes the path of the component which we want to lazy load.
+
+- Initially using lazy we will get this error
+  (A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator)
+
+  # This error is because the lazy component will take at least some time lets say 12ms to load on the web page,but when we navigate to the lazy component react will quickly render the lazy component before 12 ms ,and this will cause react to suspend the render process.If we haven't used lazy the component would be initially present when the web page lads for first time but using lazy loading we don't have that component pre loaded.
+
+  # Suspense (problem to the above error) --> It suspends the rendering of the other component until an operation (such as lazy loading child components or fetching data) has completed.
+
+  - It also take a fallback prop , basically used for the purpose that what we should render until the component loads on to the browser.

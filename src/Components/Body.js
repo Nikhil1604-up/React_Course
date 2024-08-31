@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import RestaurantCard from "./RestaurantCard";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   //local state variable -- super powerful variable.(we will use a hook useState)
   const [restaurantList, setRestaurantList] = useState([]);
@@ -30,6 +31,14 @@ const Body = () => {
     );
   };
 
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you are offline!! Please check your internet connection
+      </h1>
+    );
   useEffect(() => {
     fetchData();
   }, []);
