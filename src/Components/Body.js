@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import RestaurantCard from "./RestaurantCard";
 const Body = () => {
   //local state variable -- super powerful variable.(we will use a hook useState)
   const [restaurantList, setRestaurantList] = useState([]);
