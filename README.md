@@ -253,3 +253,9 @@ Code splitting is one of the most compelling features of webpack. This feature a
 # Note --> HOC takes a component as an input ,it enchances the component and returns the component.
 
 # Note --> HOC are pure functions --> Pure function are those where we are not changing the behaviour of the component which we have received as an argument in HOC.
+
+# Controlled and Uncontrolled Components --> Lets take example of RestaurantCategory component if it has its own state how we have used previously it would be an uncontrolled component and if it receives the showItems state from its parent and does not do manipulation on its own then it is a controlled component.
+
+# Note --> 1. Controlling the state from parent to the child component - controlled component (child).
+
+           2. Child component relying on itself to mange the state management - uncontrolled component (child).
