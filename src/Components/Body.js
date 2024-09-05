@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   //local state variable -- super powerful variable.(we will use a hook useState)
   const [restaurantList, setRestaurantList] = useState([]);
+  console.log(restaurantList);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   //useEffect hook
 
+  //Higher Order Component
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
   const searchHandler = () => {
     const searchedList = restaurantList?.filter((res) =>
       res?.info?.name?.toLowerCase().includes(searchText?.toLowerCase())
@@ -61,7 +64,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filteredList = restaurantList?.filter(
-              (res) => res.info.avgRating > 4
+              (res) => res.info.avgRating > 4.2
             );
             setFilteredRestaurant(filteredList);
           }}
@@ -71,7 +74,14 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant?.map((restaurant) => {
-          return (
+          console.log(restaurant, "r");
+          // If restaurants average rating is greater than 4 ,then show restauran as promoted,else not.
+          return restaurant?.info?.avgRating > 4.2 ? (
+            <RestaurantCardPromoted
+              resObj={restaurant}
+              key={restaurant.info.id}
+            />
+          ) : (
             <RestaurantCard resObj={restaurant} key={restaurant.info.id} />
           );
         })}

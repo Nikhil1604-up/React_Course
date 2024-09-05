@@ -245,3 +245,11 @@ Code splitting is one of the most compelling features of webpack. This feature a
   # Suspense (problem to the above error) --> It suspends the rendering of the other component until an operation (such as lazy loading child components or fetching data) has completed.
 
   - It also take a fallback prop , basically used for the purpose that what we should render until the component loads on to the browser.
+
+## EP 10 (Data is the New Oil).
+
+# Higher Order Components (HOC) --> Higher Order Component is a function that takes a components as an argument and returns a component.
+
+# Note --> HOC takes a component as an input ,it enchances the component and returns the component.
+
+# Note --> HOC are pure functions --> Pure function are those where we are not changing the behaviour of the component which we have received as an argument in HOC.
